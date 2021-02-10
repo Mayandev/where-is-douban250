@@ -2,7 +2,7 @@ const markdownTable = require('markdown-table');
 const fs = require('fs');
 const data = fs.readFileSync('./douban250-in-bilibili.csv');
 const rows = data.toString().split('\n');
-const len = rows.shift().length;
+rows.shift();
 const table = rows.map(row => row.split(',').map(column => column.trim()));
 const newTable = table.map(row => {
   const rate = row[2];
@@ -12,8 +12,8 @@ const newTable = table.map(row => {
     row[0],
     row[1],
     row[3],
-    `[![](https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white)](${doubanLink})`,
-    `[![](https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white)](${bilibiliLink})`,
+    `[![](https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=for-the-badge)](${doubanLink})`,
+    `[![](https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=for-the-badge)](${bilibiliLink})`,
   ];
 });
 const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '豆瓣', '哔哩哔哩'], ...newTable]);
