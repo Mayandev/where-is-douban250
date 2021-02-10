@@ -11,12 +11,12 @@ const newTable = table.map(row => {
   return [
     row[0],
     row[1],
+    row[3],
     `[![](https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white)](${doubanLink})`,
     `[![](https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white)](${bilibiliLink})`,
-    row[3],
   ];
 });
-const tableContentInMD = markdownTable([['排名', '电影名称', '豆瓣', '哔哩哔哩', '评论'], ...newTable]);
+const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '豆瓣', '哔哩哔哩'], ...newTable]);
 
 const readme = `
 # B 站豆瓣电影 Top250
