@@ -8,12 +8,14 @@ const newTable = table.map(row => {
   const rate = row[2];
   const doubanLink = row[5];
   const bilibiliLink = row[6];
+  const doubanBadge =  `https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=for-the-badge`;
+  const bilibiliBadge = `https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=for-the-badge`;
   return [
     row[0],
     row[1],
     row[3],
-    `[![](https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=for-the-badge)](${doubanLink})`,
-    `[![](https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=for-the-badge)](${bilibiliLink})`,
+    `<a href="${doubanLink}"><img style="width: 100px" src="${doubanBadge}"></a>`,
+    `<a href="${bilibiliLink}"><img style="width: 100px" src="${bilibiliBadge}"></a>`,
   ];
 });
 const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '豆瓣', '哔哩哔哩'], ...newTable]);
@@ -38,6 +40,5 @@ ${tableContentInMD}
 感谢 [@mrchi](https://www.v2ex.com/t/752717) 整理的 [Google Docs](https://docs.google.com/spreadsheets/d/150UlNx0rv-wdattxUTuvRKTjAUMYWCWmBnHQZ8FV5Kg/edit#gid=0)。
 
 `;
-
 
 fs.writeFileSync('./README.md', readme, 'utf8');
