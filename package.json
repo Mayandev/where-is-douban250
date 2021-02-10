@@ -1,0 +1,27 @@
+{
+  "name": "douban250-in-bilibili",
+  "version": "1.0.0",
+  "description": "Douban top 250 in bilibili",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayandev/douban250-in-bilibili.git"
+  },
+  "keywords": [
+    "douban",
+    "bilibili",
+    "movie"
+  ],
+  "author": " <phillzou@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayandev/douban250-in-bilibili/issues"
+  },
+  "homepage": "https://github.com/Mayandev/douban250-in-bilibili#readme",
+  "dependencies": {
+    "markdown-table": "^2.0.0"
+  }
+}
