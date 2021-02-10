@@ -14,8 +14,8 @@ const newTable = table.map(row => {
     row[0],
     row[1],
     row[3],
-    `<a href="${doubanLink}"><img style="width: 100px" src="${doubanBadge}"></a>`,
-    `<a href="${bilibiliLink}"><img style="width: 100px" src="${bilibiliBadge}"></a>`,
+    `<a href="${doubanLink}"><img width=150 src="${doubanBadge}"></a>`,
+    `<a href="${bilibiliLink}"><img width=125 src="${bilibiliBadge}"></a>`,
   ];
 });
 const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '豆瓣', '哔哩哔哩'], ...newTable]);
