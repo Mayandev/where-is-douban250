@@ -108,7 +108,7 @@
 
 ## 如何维护
 
-1. 在[./douban250-in-bilibili.csv](./douban250-in-bilibili) 中填入相应的电影简介以及名称。
+1. 在[./douban250-in-bilibili.csv](./douban250-in-bilibili.csv) 中填入相应的电影简介以及名称。
 2. 提交 PR
 3. (自动) PR 被 merge 之后 README 通过 [./script.js](./script.js) 生成
 
