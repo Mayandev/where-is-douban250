@@ -11,7 +11,6 @@ const newTable = table.map(row => {
   return [
     row[0],
     row[1],
-    row[4],
     `[![](https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white)](${doubanLink})`,
     `[![](https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white)](${bilibiliLink})`,
     row[3],
