@@ -16,7 +16,7 @@ const newTable = table.map(row => {
     row[3],
   ];
 });
-const tableContentInMD = markdownTable([['排名', '电影名称', '类型', '豆瓣', '哔哩哔哩', '评论'], ...newTable]);
+const tableContentInMD = markdownTable([['排名', '电影名称', '豆瓣', '哔哩哔哩', '评论'], ...newTable]);
 
 const readme = `
 # B 站豆瓣电影 Top250
