@@ -3,7 +3,7 @@ name: Update readme and feed.opml
 on: 
   push:
     paths: 
-      - 'douban250-in-bilibili.csv'
+      - 'where-is-top.csv'
       - 'script.js'
       - '.github/workflows/updateInfo.yml'
 
