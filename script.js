@@ -36,21 +36,21 @@ const newTable = table.map(row => {
     const url = enable_urls[i];
     for (let j = 0; j < keys.length; j++) {
       if (url.indexOf(keys[j]) >= 0) {
-        linkMap[keys[j]]['url'] = url;
+        linkMap[keys[j]]['url'] = decodeURIComponent(url);
         break;
       }
     }
   }
   
   const doubanBadge = `https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=for-the-badge`;
+  const doubanBadgeLink = `<a href="${doubanLink}"><img src="${doubanBadge}"></a>`;
   const badges = Object.keys(linkMap)
     .filter(key => linkMap[key]['url'] !== '')
     .map(key => `<a href="${linkMap[key]['url']}"><img src="${linkMap[key]['badge']}"></a>`);
-  badges.unshift(`<a href="${doubanLink}"><img src="${doubanBadge}"></a>`)
   const badgeMD = badges.join('&nbsp;');
-  return [row[0], row[1], row[7], badgeMD];
+  return [row[0], row[1], row[7], doubanBadgeLink, badgeMD];
 });
-const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '相关链接'], ...newTable]);
+const tableContentInMD = markdownTable([['排名', '电影名称', '推荐语', '豆瓣', '相关链接'], ...newTable]);
 
 const readme = `
 # Where is top 250 movie ?
