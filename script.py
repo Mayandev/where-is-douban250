@@ -47,6 +47,10 @@ def parse_html(html, writer, movies_info):
         voting_num = movie.xpath("descendant::div[@class='star']/span")[3].text
 
         quote = movie.xpath("descendant::div[@class='bd']/p[2]/span")
+        if(len(quote) > 0):
+            quote = quote[0].text
+        else:
+            quote = ''
         movie_info = (int(num), name, float(score), country, year,
                       category, int(voting_num[0:-3]), quote, url, enable_urls)
         movies_info.append(movie_info)
@@ -63,7 +67,7 @@ def parse_html(html, writer, movies_info):
 def main():
     url = DOWNLOAD_URL
     # 将数据导入到csv文件中
-    writer = csv.writer(open('175.csv', 'w', newline='', encoding='utf-8'))
+    writer = csv.writer(open('where-is-top250.csv', 'w', newline='', encoding='utf-8'))
     fields = ('rank',  'name', 'score', 'country', 'year', 'category', 'votes', 'quote', 'douban_url', 'enable_urls')
     writer.writerow(fields)
     movies_info = []
