@@ -29,7 +29,8 @@ const newTable = table.map(row => {
       badge: 'https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=for-the-badge'
     },
   };
-  const enable_urls = row[9].split(';');
+  const enable_str = row[9] || '';
+  const enable_urls = enable_str.split(';');
 
   for (let i = 0; i < enable_urls.length; i++) {
     const keys = Object.keys(linkMap);
