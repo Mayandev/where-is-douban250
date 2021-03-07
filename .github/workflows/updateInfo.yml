@@ -1,4 +1,4 @@
-name: Update readme and feed.opml
+name: Update readme
 
 on: 
   push:
