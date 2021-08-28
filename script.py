@@ -8,7 +8,7 @@ DOWNLOAD_URL = 'https://movie.douban.com/top250'
 
 def download_page(url):
     return requests.get(url, headers={
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0'
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
     }).text
 
 
@@ -20,7 +20,7 @@ def parse_html(html, writer, movies_info):
         name = ''
         for num in range(0, name_num):
             name += movie.xpath("descendant::span[@class='title']")[
-                                num].text.strip()
+                num].text.strip()
         # 获取中文名
         name = name.replace('/', '').split()[0]
         # 排名，豆瓣页面
@@ -61,14 +61,15 @@ def parse_html(html, writer, movies_info):
         return DOWNLOAD_URL + next_page
     except:
         return None
-       
 
 
 def main():
     url = DOWNLOAD_URL
     # 将数据导入到csv文件中
-    writer = csv.writer(open('where-is-top250.csv', 'w', newline='', encoding='utf-8'))
-    fields = ('rank',  'name', 'score', 'country', 'year', 'category', 'votes', 'quote', 'douban_url', 'enable_urls')
+    writer = csv.writer(open('where-is-top250.csv', 'w',
+                        newline='', encoding='utf-8'))
+    fields = ('rank',  'name', 'score', 'country', 'year',
+              'category', 'votes', 'quote', 'douban_url', 'enable_urls')
     writer.writerow(fields)
     movies_info = []
     while url:
