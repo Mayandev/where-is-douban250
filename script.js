@@ -10,23 +10,23 @@ const newTable = table.map(row => {
   const linkMap = {
     'v.qq.com': {
       url: '',
-      badge: 'https://shields.io/badge/-腾讯视频-3199fa?logo=Tencent%20QQ&logoColor=white&style=for-the-badge'
+      badge: 'https://shields.io/badge/-腾讯视频-3199fa?logo=Tencent%20QQ&logoColor=white&style=flat'
     },
     'v.youku.com': {
       url: '',
-      badge: 'https://shields.io/badge/-优酷-f9005c?logo=YouTube%20Music&logoColor=white&style=for-the-badge',
+      badge: 'https://shields.io/badge/-优酷-f9005c?logo=YouTube%20Music&logoColor=white&style=flat',
     },
     'iqiyi.com': {
       url: '',
-      badge: 'https://shields.io/badge/-爱奇艺-689b33?logo=QuickTime&logoColor=white&style=for-the-badge',
+      badge: 'https://shields.io/badge/-爱奇艺-689b33?logo=QuickTime&logoColor=white&style=flat',
     },
     'ixigua.com': {
       url: '',
-      badge: 'https://shields.io/badge/-西瓜视频-fb0058?logo=Headspace&logoColor=white&style=for-the-badge'
+      badge: 'https://shields.io/badge/-西瓜视频-fb0058?logo=Headspace&logoColor=white&style=flat'
     },
     'bilibili.com': {
       url: '',
-      badge: 'https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=for-the-badge'
+      badge: 'https://shields.io/badge/-哔哩哔哩-fb7299?logo=bilibili&logoColor=white&style=flat'
     },
   };
   const enable_str = row[9] || '';
@@ -43,7 +43,7 @@ const newTable = table.map(row => {
     }
   }
   
-  const doubanBadge = `https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=for-the-badge`;
+  const doubanBadge = `https://shields.io/badge/豆瓣-${rate}-00B51D?logo=douban&logoColor=white&style=flat`;
   const badges = Object.keys(linkMap)
     .filter(key => linkMap[key]['url'] !== '')
     .map(key => `<a href="${linkMap[key]['url']}"><img src="${linkMap[key]['badge']}"></a>`);
