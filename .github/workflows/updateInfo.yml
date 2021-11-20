@@ -3,7 +3,7 @@ name: Update readme
 on: 
   push:
     paths: 
-      - 'where-is-top.csv'
+      - 'where-is-top250.csv'
       - 'script.js'
       - '.github/workflows/updateInfo.yml'
 
