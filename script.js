@@ -8,6 +8,10 @@ const newTable = table.map(row => {
   const rate = row[2];
   const doubanLink = row[8];
   const linkMap = {
+    'miguvideo.com': {
+      url: '',
+      badge: 'https://shields.io/badge/-咪咕视频-EA4335?logo=Gmail&logoColor=white&style=flat'
+    },
     'v.qq.com': {
       url: '',
       badge: 'https://shields.io/badge/-腾讯视频-3199fa?logo=Tencent%20QQ&logoColor=white&style=flat'
@@ -58,17 +62,11 @@ const readme = `
 
 本仓库整理了腾讯视频、爱奇艺、优酷、哔哩哔哩等视频网站中，能够观看的「**豆瓣电影 Top250 榜单**」影片，点击 Badge 可跳转至相应的电影首页，👏 欢迎一同维护。
 
-> 更新于 ${new Date().toLocaleDateString()}
+> 更新于 ${new Date().toLocaleDateString()}，每三个月手动维护一次，请持续关注。
 
 ## 电影列表
 
 ${tableContentInMD}
-
-## 如何维护
-
-1. 在 [where-is-top250.csv](./where-is-top250.csv) 中填入相应的电影简介以及名称。
-2. 提交 PR
-3. (自动) PR 被 merge 之后 README 通过 [./script.js](./script.js) 生成
 
 `;
 
